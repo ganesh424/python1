@@ -18,3 +18,4 @@ f.seek(0,0)
 print 'reading file:'
 print f.read()
 f.close()
+#print 'ganesh'
