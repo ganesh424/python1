@@ -1,0 +1,41 @@
+1).If file is existing read the file contents,if file is not found create,write and read the file contents
+
+import os,sys
+fname=raw_input('enter filename:')
+if os.path.isfile(fname):
+    f=open(fname,'r+')
+else:
+    print(fname+"doesn't exist")
+    sys.exit()
+print 'the file contents are:'
+str=f.read()
+print str
+f.seek(0,0)
+s=''
+while s!='@':
+    s=raw_input()
+    if s!='@':
+        f.write(s+'\n')
+f.seek(0,0)
+print 'reading file:'
+print f.read()
+f.close()
+
+4).how to search the substring in a file
+
+import os,sys
+fname=raw_input('enter filename:')
+if os.path.isfile(fname):
+    f=open(fname,'r')
+else:
+    print(fname+"doesn't exist")
+    sys.exit()
+print 'file contents are:'
+str=f.read()
+print str
+sub=raw_input('enter sub string:')
+pos=str.find(sub,0,len(str))
+if pos==-1:
+    print 'sub string is not found'
+else:
+    print 'subsring is found at',pos+1
